@@ -10,6 +10,14 @@ import SwiftUI
 struct DetailMountainView: View {
     @Environment(\.presentationMode) var presentationMode
     let mountain: Mountain
+    
+    init(mountain: Mountain) {
+        self.mountain = mountain
+        UINavigationBar.appearance().barTintColor = .clear
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    }
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -58,34 +66,36 @@ extension DetailMountainView {
     @ViewBuilder
     func TopCardView() -> some View {
         GeometryReader { reader in
+            let minY = reader.frame(in: .named("SCROLL")).minY
             let size = reader.size
-            ZStack {
-                Image(mountain.image)
-                    .resizable()
-                    .scaledToFill()
-                    .overlay(
-                        LinearGradient(colors: [Color.black.opacity(0.15), Color("b")], startPoint: .top, endPoint: .bottom)
-                    )
-                    .frame(width: size.width, height: size.height)
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Mountain")
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 14, weight: .medium))
-                        .padding(.bottom, 2)
-                    Text(mountain.title)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 48, weight: .bold))
-                        .padding(.bottom, 5)
-                    Text(mountain.locationDescription)
-                        .foregroundColor(Color.white.opacity(0.3))
-                        .font(.system(size: 10, weight: .regular))
-                        .multilineTextAlignment(.leading)
-                        .padding(.trailing, 30)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                .padding(.horizontal, 28)
-            }
-            .frame(width: size.width, height: size.height, alignment: .bottom)
+            let height = reader.size.height + minY
+            Image(mountain.image)
+                .resizable()
+                .scaledToFill()
+                .overlay(
+                    LinearGradient(colors: [Color.black.opacity(0.15), Color("b")], startPoint: .top, endPoint: .bottom)
+                )
+                .frame(width: size.width, height: height, alignment: .bottom)
+                .overlay(
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Mountain")
+                            .foregroundColor(Color.white)
+                            .font(.system(size: 14, weight: .medium))
+                            .padding(.bottom, 2)
+                        Text(mountain.title)
+                            .foregroundColor(Color.white)
+                            .font(.system(size: 48, weight: .bold))
+                            .padding(.bottom, 5)
+                        Text(mountain.locationDescription)
+                            .foregroundColor(Color.white.opacity(0.3))
+                            .font(.system(size: 10, weight: .regular))
+                            .multilineTextAlignment(.leading)
+                            .padding(.trailing, 30)
+                    }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                        .padding(.horizontal, 28)
+                )
+                .offset(y: -minY)
         }
         .frame(height: UIScreen.main.bounds.height / 1.45, alignment: .top)
     }
@@ -152,7 +162,7 @@ extension DetailMountainView {
                     .background(Color.blue)
                     .cornerRadius(30)
             })
-            .buttonStyle(PlainButtonStyle())
+                .buttonStyle(PlainButtonStyle())
         }
         .padding(.horizontal, 28)
         .padding(.bottom)

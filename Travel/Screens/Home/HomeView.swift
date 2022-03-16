@@ -12,6 +12,12 @@ struct HomeView: View {
     @State var selectedCategory = "all"
     @State var selectedMountain: Mountain? = nil
     
+    init() {
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
+        ]
+    }
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -48,6 +54,7 @@ struct HomeView: View {
                     }
                 }
             }
+            .navigationTitle("Compass")
         }
         
     }

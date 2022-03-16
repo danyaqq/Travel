@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373F9F7827E26F0200A42428 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F9F7727E26F0200A42428 /* CalendarView.swift */; };
+		373F9F7B27E26F4300A42428 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F9F7A27E26F4300A42428 /* FavoriteView.swift */; };
+		373F9F7E27E26F6A00A42428 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F9F7D27E26F6A00A42428 /* ProfileView.swift */; };
 		3FA3E65E27E207A6004F6FDB /* TravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E65D27E207A6004F6FDB /* TravelApp.swift */; };
 		3FA3E66027E207A6004F6FDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E65F27E207A6004F6FDB /* ContentView.swift */; };
 		3FA3E66227E207A7004F6FDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E66127E207A7004F6FDB /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		373F9F7727E26F0200A42428 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		373F9F7A27E26F4300A42428 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		373F9F7D27E26F6A00A42428 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3FA3E65A27E207A6004F6FDB /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA3E65D27E207A6004F6FDB /* TravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelApp.swift; sourceTree = "<group>"; };
 		3FA3E65F27E207A6004F6FDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +59,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		373F9F7627E26EF400A42428 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				373F9F7727E26F0200A42428 /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		373F9F7927E26F3900A42428 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				373F9F7A27E26F4300A42428 /* FavoriteView.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		373F9F7C27E26F5F00A42428 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				373F9F7D27E26F6A00A42428 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		3FA3E65127E207A6004F6FDB = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +142,9 @@
 		3FF64D7627E20F0400CB0ABE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				373F9F7C27E26F5F00A42428 /* Profile */,
+				373F9F7927E26F3900A42428 /* Favorite */,
+				373F9F7627E26EF400A42428 /* Calendar */,
 				3FF64D7C27E212EB00CB0ABE /* Home */,
 				3FF64D7727E2108900CB0ABE /* MainTab */,
 			);
@@ -237,10 +270,13 @@
 			files = (
 				3FF64D8A27E230B800CB0ABE /* ConditionCardView.swift in Sources */,
 				3FF64D8C27E2345900CB0ABE /* CustomMapView.swift in Sources */,
+				373F9F7B27E26F4300A42428 /* FavoriteView.swift in Sources */,
 				3FF64D8227E2209C00CB0ABE /* MountainCardView.swift in Sources */,
 				3FF64D8827E22D5700CB0ABE /* MountainRouteView.swift in Sources */,
 				3FF64D7B27E2122C00CB0ABE /* CustomShape.swift in Sources */,
 				3FA3E66027E207A6004F6FDB /* ContentView.swift in Sources */,
+				373F9F7E27E26F6A00A42428 /* ProfileView.swift in Sources */,
+				373F9F7827E26F0200A42428 /* CalendarView.swift in Sources */,
 				3FA3E65E27E207A6004F6FDB /* TravelApp.swift in Sources */,
 				3FF64D8527E2214400CB0ABE /* DetailMountainView.swift in Sources */,
 				3FF64D8F27E235E400CB0ABE /* LocationManager.swift in Sources */,

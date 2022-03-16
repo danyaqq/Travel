@@ -18,26 +18,23 @@ struct MainTabView: View {
     @State var selection: Tabs = .home
     init() {
         UITabBar.appearance().isHidden = true
-        UINavigationBar.appearance().barTintColor = UIColor(named: "t")
+        UINavigationBar.appearance().barTintColor = UIColor(named: "b")
     }
     var body: some View {
-        NavigationView {
-            TabView(selection: $selection) {
-                HomeView()
-                    .tag(Tabs.home)
-                CalendarView()
-                    .tag(Tabs.agenda)
-                FavoriteView()
-                    .tag(Tabs.favorite)
-                ProfileView()
-                    .tag(Tabs.profile)
-            }
-            .navigationBarHidden(true)
-            .overlay(
-                CutstomTabView(selection: $selection)
-                ,alignment: .bottom
-            )
+        TabView(selection: $selection) {
+            HomeView()
+                .tag(Tabs.home)
+            CalendarView()
+                .tag(Tabs.agenda)
+            FavoriteView()
+                .tag(Tabs.favorite)
+            ProfileView()
+                .tag(Tabs.profile)
         }
+        .overlay(
+            CutstomTabView(selection: $selection)
+            ,alignment: .bottom
+        )
     }
 }
 

@@ -25,6 +25,12 @@ struct MainTabView: View {
             TabView(selection: $selection) {
                 HomeView()
                     .tag(Tabs.home)
+                CalendarView()
+                    .tag(Tabs.agenda)
+                FavoriteView()
+                    .tag(Tabs.favorite)
+                ProfileView()
+                    .tag(Tabs.profile)
             }
             .navigationBarHidden(true)
             .overlay(

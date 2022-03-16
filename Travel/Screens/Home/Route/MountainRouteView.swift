@@ -11,12 +11,12 @@ struct MountainRouteView: View {
     @Environment(\.presentationMode) var presentationMode
     let mountain: Mountain
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 0) {
-                CustomMapView()
-                    .frame(height: 240)
-                    .padding(.bottom, 20)
+        VStack(spacing: 0) {
+            CustomMapView()
+                .frame(height: 240)
+            ScrollView(.vertical, showsIndicators: false) {
                 PositionView()
+                    .padding(.top, 20)
                     .padding(.bottom, 50)
                 MountainCondition()
             }

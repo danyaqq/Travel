@@ -3,7 +3,7 @@
 > Реализация макета с Figma
 > Приложение для просмотра информации о горах
 
-/Users/dana/Desktop/Simulator Screen Recording - iPhone 12 - 2022-04-14 at 10.21.17.mp4
+https://user-images.githubusercontent.com/65769624/163336077-cb9c819e-4ae4-4188-adfe-9f1d8f27139c.mp4
 
 ## Стек технологий и используемые ресурсы
 1. SwiftUI
